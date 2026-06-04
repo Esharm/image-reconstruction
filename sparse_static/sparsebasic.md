@@ -22,6 +22,7 @@ Given the forward model, we want to solve for $f$. In the ideal case, we could i
 The standard error function we want to minimize over choices of $f$ is $||\mathbf{S}\mathcal{A}f - y||^2$. Note that there are essentially infinite solutions to this inverse problem. We could have $f = f' + g$ where $f'$ is the true image and $g$ is any image such that $\mathbf{S}\mathcal{A}g = 0$ (which can be constructed). With just the standard error there is no way to choose between these solutions which is preferred. This is why we introduce a **regularization** function.
 
 The regularization used here is called [Tikhonov Regularization](https://en.wikipedia.org/wiki/Ridge_regression). The objective function becomes
+
 $$O(f) = ||\mathbf{S}\mathcal{A}f - y||^2 + \lambda||f||^2.$$
 
 How does this solve the issue? The difference between $O(f)$ and just the error function itself is that $O(f)$ is globally convex, and therefore has a unique minimum. In this case, convexity of $O(f)$ means that the Hessian of $O$ is positive definite. We can compute
