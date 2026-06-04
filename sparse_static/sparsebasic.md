@@ -52,8 +52,10 @@ The error term evolves in a geometric series fashion, dependent on the eigenvalu
 
 
 Below is the sparsely sampled Fourier Transform of the cameraman image, using `elliptical_sampling_mask(N, M, .1,0.4,0.6,2)`. Refer to the code file for more details.
+
 ![sampled](sparseprofile.png)
 
 
 Below is the results, showing the true camerman image, a simple solution only applying inverse Fourier Transform (ignoring sparsity), and the Tikhonov regularization result. It's kind of hard to tell the difference, and this may be because the sparsity of the data itself just fundamentally restricts what parts of the data can be recovered. However it does look like the Tikhonov regularization has a different solution, and one that looks marginally clearer.
+
 ![results](results.png)
