@@ -1,2 +1,3 @@
 # image-reconstruction
-reconstructing images from measurements
+reconstructing images from measurements  
+csuremm project
