@@ -27,7 +27,7 @@ $$O(f) = ||\mathbf{S}\mathcal{A}f - y||^2 + \lambda||f||^2.$$
 
 How does this solve the issue? The difference between $O(f)$ and just the error function itself is that $O(f)$ is globally convex, and therefore has a unique minimum. In this case, convexity of $O(f)$ means that the Hessian of $O$ is positive definite. We can compute
 
-$$\nabla^2O(f) = \nabla(2\mathcal A^* \mathbf{S}^*(\mathbf{S}\mathcal{A}f - y) + 2\lambda f) = 2\mathcal{A}^* \mathbf{S}^*\mathbf{S}\mathcal{A} + 2\lambda \mathbf{I}.$$
+$$\nabla^2O(f) = \nabla(2\mathcal{A}^* \mathbf{S}^*(\mathbf{S}\mathcal{A}f - y) + 2\lambda f) = 2\mathcal{A}^* \mathbf{S}^*\mathbf{S}\mathcal{A} + 2\lambda \mathbf{I}.$$
 
 Now, since $\lambda > 0$ (our regularization parameter), $\nabla^2O$ is positive for all nonzero inputs $f$ (note this is not true if we did not have the $2\lambda \mathbf{I}$ term). Therefore, there should now be a global minimum to this optimization problem, and we just have to find it. 
 
