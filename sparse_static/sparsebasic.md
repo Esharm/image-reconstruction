@@ -48,3 +48,12 @@ $$e_{k+1} = (I - 2\alpha \nabla^2O)e_k.$$
 For the error term to converge, we need the constant $I - 2\alpha \nabla^2O$ to have magnitude less than 1. Luckily, this factor is entirely diagonal. We can see this since $2\mathcal{A}^* \mathbf{S}^* \mathbf{S}\mathcal{A} + 2\lambda \mathbf{I} = 2(\mathcal{A}^* \mathbf{S}\mathcal{A} + \lambda \mathbf I)$ which comes from the fact that $\mathbf{S}$ is a diagonal (real valued, since only 0 or 1) projection matrix. Then, we are essentially transforming $\mathbf{S}$ into the Fourier basis when applying $\mathcal{A}^* \mathbf{S}\mathcal{A}$ (since the FT is the change of base matrix to the Fourier Plane), and it is still diagonal. 
 
 The error term evolves in a geometric series fashion, dependent on the eigenvalues of $I - 2\alpha \nabla^2O$. Since it is diagonal, we can easily see it is $1 - 2\alpha(\delta + \lambda)$, where $\delta \in \{0,1\}$ based on the entry in the diagonal of $\mathbf{S}$. Therefore, to ensure convergence, we want $|1 - 2\alpha(\delta + \lambda)| < 1$, which can be rearranged to $\alpha < \frac{1}{\delta + \lambda}$. The strictest bound is thus $\alpha < \frac{1}{1+\lambda}$. Abiding by this, we can be sure that the numerical algorithm will terminate. The time complexity is roughly $\mathcal{O}(N^2\log N)$ for an $N \times N$ image, dominated by the runtime of the FFT on a 2D image. We also have dependence on the regularization factor $\lambda$ and the tolerance $\epsilon$, and more explicitly we see a runtime along the lines of $\mathcal{O}((\frac{1+\lambda}{\lambda})\log(\frac{1}{\epsilon})N^2\log N)$, where we can see smaller $\epsilon$ and $\lambda \to 0$ will start to increase runtime significantly.
+
+
+
+Below is the sparsely sampled Fourier Transform of the cameraman image, using `elliptical_sampling_mask(N, M, .1,0.4,0.6,2)`.
+![sampled](sparseprofile.png)
+
+
+Below is the results, showing the true camerman image, a simple solution only applying inverse Fourier Transform (ignoring sparsity), and the Tikhonov regularization result.
+![results](results.png)
