@@ -55,5 +55,5 @@ Below is the sparsely sampled Fourier Transform of the cameraman image, using `e
 ![sampled](sparseprofile.png)
 
 
-Below is the results, showing the true camerman image, a simple solution only applying inverse Fourier Transform (ignoring sparsity), and the Tikhonov regularization result.
+Below is the results, showing the true camerman image, a simple solution only applying inverse Fourier Transform (ignoring sparsity), and the Tikhonov regularization result. It's kind of hard to tell the difference, and this may be because the sparsity of the data itself just fundamentally restricts what parts of the data can be recovered. However it does look like the Tikhonov regularization has a different solution, and one that looks marginally clearer.
 ![results](results.png)
