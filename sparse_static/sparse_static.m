@@ -106,13 +106,12 @@ imshow(f)
 title('Original image')
 
 Af = fftshift(fft2(f));
-
-mask = elliptical_sampling_mask(N, M, .2,0.5,0.5,2); 
-SAf = Af .* mask;
-
 noise_std = 0.01;
 eps = noise_std * (randn(N,M) + 1i*randn(N,M));
-y = SAf + eps;
+mask = elliptical_sampling_mask(N, M, .1,0.4,0.6,2); 
+
+Af_noisy = fftshift(fft2(f)) + eps;              % instrument measures noisy k-space
+y = Af_noisy .* mask;
 
 figure
 imshow(y)
