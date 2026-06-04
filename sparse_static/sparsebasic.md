@@ -51,7 +51,7 @@ The error term evolves in a geometric series fashion, dependent on the eigenvalu
 
 
 
-Below is the sparsely sampled Fourier Transform of the cameraman image, using `elliptical_sampling_mask(N, M, .1,0.4,0.6,2)`.
+Below is the sparsely sampled Fourier Transform of the cameraman image, using `elliptical_sampling_mask(N, M, .1,0.4,0.6,2)`. Refer to the code file for more details.
 ![sampled](sparseprofile.png)
 
 
