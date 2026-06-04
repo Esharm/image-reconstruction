@@ -37,7 +37,7 @@ $$f_{k+1} = f_k - \alpha \nabla O(f_k)$$
 
 Until $f_{k+1}-f_k$ is small enough that we have essentially reached the minimum. We aim to prove that there exists a threshold on the step size $\alpha$ that guarantees convergence in finite time.
 
-As above, the gradient $\nabla O = 2\mathcal A^* \mathbf{S}^* (\mathbf{S}\mathcal{A}f - y) + 2\lambda f = 2\nabla^2O - 2\mathcal{A}^* \mathbf{S}^* y$. Let $f^* $ be the minimizer of $\nabla O(f)$, in which case we can write $\nabla O(f_k) = 2\nabla^2 O(f_k - f^*)$ (in other words define $f^* $ such that $\nabla^2 O f^* =  A^* \mathbf{S}^* y$).
+As above, the gradient $\nabla O = 2\mathcal A^* \mathbf{S}^* (\mathbf{S}\mathcal{A}f - y) + 2\lambda f = 2\nabla^2O - 2\mathcal{A}^* \mathbf{S}^* y$. Let $f^* $ be the minimizer of $\nabla O(f)$, in which case we can write $\nabla O(f_k) = 2\nabla^2 O(f_k - f^* )$ (in other words define $f^* $ such that $\nabla^2 O f^* =  A^* \mathbf{S}^* y$).
 
 We define the error term $e_k = f_k - f^*$. Then, 
 
